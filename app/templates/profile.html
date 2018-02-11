@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div id ="profile">  
+    
+    
+<div id = "BIO"> 
+        	
+    <div id= "name">
+        <div id = "image"> <img src="{{url_for('static', filename = 'profile.jpg' )}}"></img>
+         <h1><strong>Kyle Ramgolam</strong> </h1>
+         @KyleR </br></br>
+        Kingston, Jamaica </br>
+        </div>
+        <div id="date"> Joined {{ date }}  </div>
+
+    </div>
+    </br>
+    <div id="about-me">   I am a Computer Science Student at the University of the West</br> Indies and would consider myself a hard working young man. </div>
+    </br>
+    <div id="Foll">
+        <strong>7</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;   <strong>100</strong> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;       <strong>250</strong> </br></div></br>
+        
+    <div id="foll2">
+        Posts&emsp;&emsp;&emsp;&emsp;&emsp; Following &emsp;&emsp;&emsp;&emsp;  Followers
+    </div>
+    
+    </br></br>
+    
+    <button id="button">Follow</button>
+    
+</div>
+</div>
+{% endblock %}

@@ -4,14 +4,20 @@ Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
-
+import datetime
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+
 
 
 ###
 # Routing for your application.
 ###
+
+@app.route('/profile')
+def profile():
+    datetime = format_date_joined();
+    return render_template('profile.html',date=datetime)
 
 @app.route('/')
 def home():
@@ -34,6 +40,11 @@ def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
+    
+def format_date_joined():
+    dateJoined=datetime.date(2018,2,10)
+    return dateJoined.strftime("%B, %Y")
+    
 
 
 @app.after_request
